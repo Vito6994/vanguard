@@ -1,161 +1,382 @@
-/* CSS BY YOUR NAME */
+/* CSS BY DAVID MENDOZA */
 
-/* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORTED FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 /* CSS RESET */
-/* http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-License: none (public domain)
-*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article,
+aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time,
+mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-    display: block;
+  display: block;
 }
 body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  line-height: 1;
+  min-width: 400px;
 }
 
 /* ROOT VARIABLES */
 :root {
-    --blue: #007BFF;
-    --red: #FF4500;
-    --white: #EAEAEA;
-    --black: #000000;
-    --charcoal: #333333;
-    --font: "Inter", sans-serif;
+  --blue: #007bff;
+  --red: #FF4500;
+  --white: #fff;
+  --gray: #f3f4f8;
+  --charcoal: #222b38;
+  --font: 'Inter', sans-serif;
 }
 
-/* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
+/* GLOBAL STYLES */
+body {
+  font-family: var(--font);
+  background: var(--white);
+  color: var(--charcoal);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header {
+  background: #111c26;
+  color: #fff;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: 0 2px 0 0 var(--blue);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: var(--blue);
+  gap: 0.5em;
+}
+.logo img {
+  height: 2.5em;
+  width: auto;
+}
+nav ul {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+}
+nav a {
+  color: var(--blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.15em;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--red);
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 1rem;
-    overflow: hidden;
+/* HERO SECTION */
+.hero {
+  background: url('images/vanguard-hero.jpg') no-repeat center center/cover;
+  min-height: 430px;
+  height: 52vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .overlay {
+  background: rgba(24,28,32, 0.68);
+  width: 100%;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  max-width: 670px;
+  margin: 0 auto;
+  padding: 2.5em 1em;
+  background: rgba(12, 12, 12, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 40px 0 rgba(0,0,0,0.23);
+}
+.hero h1 {
+  font-size: 2.1em;
+  margin-bottom: 0.45em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.hero p {
+  font-size: 1.05em;
+  margin-bottom: 1.5em;
+}
+.btn {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75em 2.1em;
+  border-radius: 6px;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+  transition: background 0.2s;
+  margin-top: 1em;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover {
+  background: #005ad9;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+/* EXPERTISE SECTION */
+.expertise {
+  margin: 2em auto;
+  text-align: left;
 }
-/* THIS ONE IS DONE FOR YOU */
+.expertise h2 {
+  font-size: 1.55em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.expertise p {
+  font-size: 1.13em;
+}
+
+/* SERVICES SECTION */
+.services h2 {
+  margin-bottom: 1em;
+  font-size: 1.45em;
+  font-weight: 700;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.3em;
+}
+.service-card {
+  background: var(--blue);
+  color: #fff;
+  padding: 1.5em 1.2em;
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(0,123,255,0.07);
+}
+.service-card h3 {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-bottom: 0.65em;
+}
+.service-card p {
+  font-size: 1em;
+}
+
+/* RESULTS SECTION */
+.results-section {
+  background: var(--blue);
+  color: #fff;
+  padding: 3.5em 0 2em 0;
+}
+.results-section h2 {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+.results-section p {
+  font-size: 1.12em;
+  margin-bottom: 1.9em;
+}
+.results-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+.results-table h3, .results-chart h3 {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+.results-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.04em;
+  background: #111c26;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.results-table th, .results-table td {
+  padding: 0.8em 1em;
+  text-align: left;
+}
+.results-table th {
+  background: #181c20;
+}
+.results-table tbody tr:nth-child(even) {
+  background: #191e24;
+}
+.results-table tbody tr:nth-child(odd) {
+  background: #222b38;
+}
+.results-table td {
+  color: #fff;
+  font-weight: 500;
+}
+.results-table th {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.results-chart {
+  width: 100%;
+  margin-top: 2.5em;
+}
 #bar-chart {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: flex-end;
-    justify-content: space-around;
-    gap: 1rem;
-    height: 300px;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-    position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 2.2em;
+  height: 210px;
+  background: none;
+  justify-content: center;
 }
-/* ADD ON TRANSITION ON HEIGHT */
 .bar {
-    width: 50px;
-    background: var(--charcoal);
-    border-radius: 10px;
-    position: relative;
-    transition: ;
-    height: 0;
+  width: 40px;
+  background: #222b38;
+  border-radius: 8px 8px 0 0;
+  height: 0;
+  transition: height 0.5s;
+  animation: stepUp 1s ease-in-out forwards;
+  position: relative;
 }
-/* THIS ONE IS DONE FOR YOU */
 .bar::after {
-    content: attr(data-year);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--white);
+  content: attr(data-year);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2em;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 700;
 }
 @keyframes stepUp {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: var(--height);
-    }
-}
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
-    animation: stepUp 1s ease-in-out forwards;
+  0% { height: 0; }
+  100% { height: var(--height); }
 }
 
+/* CONTACT SECTION */
+.contact-section {
+  background: #101c2c;
+  color: #fff;
+  padding: 3em 0 1.5em 0;
+}
+.contact-section h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.contact-section p {
+  font-size: 1.08em;
+  margin-bottom: 1.5em;
+}
+form {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.contact-row {
+  display: flex;
+  gap: 1.2em;
+}
+form input, form textarea {
+  flex: 1 1 0px;
+  padding: 0.7em 1em;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 0;
+  font-size: 1.03em;
+  background: #f3f4f8;
+  color: #232a36;
+}
+form textarea {
+  min-height: 4em;
+  max-width: 100%;
+  margin-top: 0.6em;
+  resize: vertical;
+}
+form button {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.12em;
+  padding: 0.8em 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5em;
+  transition: background 0.2s;
+}
+form button:hover {
+  background: #005ad9;
+}
 
-/* MEDIA QUERIES (MEDIUM) */ 
+/* FOOTER */
+footer {
+  background: #101c2c;
+  color: #fff;
+  text-align: center;
+  font-size: 0.99em;
+  padding: 1.7em 0 1.2em 0;
+  margin-top: 0;
+}
+footer a {
+  color: var(--blue);
+  text-decoration: underline;
+}
 
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
-
-
-/* MEDIA QUERIES (LARGE) */
+/* MEDIA QUERIES */
+@media (min-width: 700px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.7em;
+  }
+  .results-flex {
+    flex-direction: row;
+    gap: 3.5em;
+  }
+  .results-table, .results-chart {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .hero-content {
+    padding: 1.4em 0.5em;
+  }
+  .container {
+    width: 98%;
+  }
+}
